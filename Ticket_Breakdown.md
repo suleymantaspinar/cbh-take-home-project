@@ -53,7 +53,8 @@ Description: Create a POST endpoint that generates reports based on the customAg
 
 POST /report/{facilityId}/{agentId}
 
-```{
+```
+{
   header: {
     "Authorization": Bearer {token}
   },
@@ -65,12 +66,17 @@ POST /report/{facilityId}/{agentId}
 
 ##### Example Response:
 
-```{
+```
+{
   success: boolean,
   data: {
     facilityId: string
     agentId: string
     customAgentId: string
+  },
+  error : {
+    "message": "",
+    "code": "",
   }
 }
 ```
@@ -80,10 +86,9 @@ POST /report/{facilityId}/{agentId}
 #### Tshirt size: S
 
 ### Ticket 3
-
 Create an endpoint to get reports
-Description: Create a RESTful endpoint that returns reports with the customAgentId
-Acceptence Criteria
+##### Description: Create a RESTful endpoint that returns reports with the customAgentId
+##### Acceptence Criteria
 
 - Only authenticated users should be able to retrieve reports.
 - Users see explanatory error messages when they couldn't get the reports.
@@ -94,12 +99,16 @@ Acceptence Criteria
 
 GET /reports/{customAgentId}
 
-```{
+```
+{
   header: {
     "Authorization": Bearer {token}
   }
 }
-Example Response:
+```
+
+##### Example Response:
+```
 {
   data: {
     reports: [
@@ -107,6 +116,10 @@ Example Response:
         Shift
       }
     ]
+  },
+  error : {
+    "message": "",
+    "code": "",
   }
 }
 ```
@@ -116,3 +129,13 @@ Example Response:
 #### Estimation: 6 hours
 
 #### Tshirt Size: S
+
+### Ticket 4
+Create a documentation for generating report flow.
+#### Description: Create a technical documentation of the reports flow.
+#### Acceptence Criteria:
+- Functional requirements should be included.
+- Design diagrams should be included.
+#### Estimation: 3 hours
+#### Tshirt Size
+
